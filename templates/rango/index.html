@@ -1,14 +1,28 @@
 <!DOCTYPE html>
+{% load static %} <!-- New line -->
+
 <html>
 
     <head>
-        <title>Rango</title>
+        <title>99-ka-fer</title>
     </head>
 
     <body>
-        <h1>Rango says...</h1>
-        hello world! <strong>{{ boldmessage }}</strong><br />
-        <a href="/rango/about/">About</a><br />
+        <h1>Nik says...</h1>
+        User list <strong>{{ boldmessage }}</strong><br />
+
+        {% if userlist %}
+          <ul>
+            {% for user in userlist %}
+              <li>{{user.name}}</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <strong>There are no users present.</strong>
+        {% endif %}
+
+        <a href="/rango/add_user_details/">Add a New User</a><br/>
+        <!--<img src="{% static "IMG_3101.JPG" %}" style="border: none; width: 40%;" alt="Picture background" />--> <!-- New line -->
     </body>
 
 </html>
