@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>99-ka-fer</title>
+    </head>
+
+    <body>
+        <h1>User Details</h1>
+        {% if username %}
+          <ul>
+              <li>{{username}}</li>
+              <li>{{userage}}</li>
+              <li>{{userphone}}</li>
+          </ul>
+        {% else %}
+          <strong>There are no users present.</strong>
+        {% endif %}
+
+        <h1>Select a plan you wish to view</h1>
+        <a href="/rango/{{username}}/cash_flow_proj_plan/">Cash Flow Projections Plan</a><br/>
+        <a href="/rango/{{username}}/retirement_plan/">Retirement Plan</a><br/>
+        <a href="/rango/{{username}}/insurance_plan/">Insurance Plan</a><br/>
+    </body>
+
+</html>
